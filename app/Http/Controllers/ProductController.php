@@ -29,15 +29,47 @@ class ProductController extends Controller
         }
 
         return view('product/index', [
-            'products'      => Product::latest()->paginate(16),
-            'recommended'   => Product::take(8)->get(),
+            'products'      => Product::latest()->paginate(20),
+            'recommended'   => Product::take(4)->get(),
+            'view'          => $view
+        ]);
+    }
+    public function besar()
+    {
+        $view = Request::get('view', 'list1');
+        $products = Product::orderBy('price', 'desc')->paginate(20);
+
+
+        if ($view != 'list' && $view != 'list1') {
+            $view = 'list1';
+        }
+
+        return view('product/index', [
+            'products'      => $products,
+            'recommended'   => Product::take(4)->get(),
+            'view'          => $view
+        ]);
+    }
+    public function kecil()
+    {
+        $view = Request::get('view', 'list1');
+        $products = Product::orderBy('price', 'asc')->paginate(20);
+
+
+        if ($view != 'list' && $view != 'list1') {
+            $view = 'list1';
+        }
+
+        return view('product/index', [
+            'products'      => $products,
+            'recommended'   => Product::take(4)->get(),
             'view'          => $view
         ]);
     }
 
     public function admin()
     {
-        $products = DB::table('products')->get();
+        $products = Product::table('products')->get();
         return view('admin.produk.show', ['products' => $products]);
     }
     public function list1()
