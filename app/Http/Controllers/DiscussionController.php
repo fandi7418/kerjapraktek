@@ -15,6 +15,7 @@ class DiscussionController extends Controller
         $data = $request->all();
         $data['user_id'] = Auth::user()->id;
 
+        // Test git
         Discussion::create($data);
 
         return redirect('/product/' . $request->get('product_id'));
