@@ -5,11 +5,7 @@
 @section('content')
 
 
-<div class="row" style="margin-bottom: 20px">
-    <div class="col-md-8">
-        <h1 class="font-effect-shadow-multiple" style="font-family: bebas neue; font-size:50px; letter-spacing:2px"> <u>Hasil Pencarian {{ $keyword }} </u>
-    </div>
-</div>
+
 <!-- <form action="{{ route('search') }}" method="GET">
     <input type="text" name="keyword" placeholder="Cari Product ..">
     <input type="submit" value="CARI">
@@ -18,15 +14,9 @@
 <div class="row">
     <div class="col-md-8">
         <div class="well">
-            <div class="row">
-                <div class="col-md-7">
-                    {!! Form::open(['class' => 'form-inline']) !!}
-                    {!! Form::label('order', 'Urutkan dari:') !!}
-                    {!! Form::select('order', ['price' => 'harga', 'star' => 'rating'], 'price', ['class' => 'form-control']) !!}
-                    {!! Form::select('sort', ['asc' => 'kecil-kebesar', 'desc' => 'besar- kekecil'], 'asc', ['class' => 'form-control']) !!}
-                    {!! Form::submit('Filter', ['class' => 'btn btn-warning']) !!}
-                    {!! Form::close() !!}
-                </div>
+            <div class="row" align="center">
+                <h1 class="font-effect-shadow-multiple" style="font-family: bebas neue; font-size:50px; letter-spacing:2px"> <u>Hasil Pencarian {{ $keyword }} </u>
+
             </div>
         </div>
 
