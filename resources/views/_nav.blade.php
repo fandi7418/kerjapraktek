@@ -72,7 +72,7 @@
                 </div>
             </ul>
         </li>
-        <li><a style="color: black; font-size:18px; font-family:bebas" href="/kategori/product/{{ $k->parent_id=''}}"> Pekerjaan</a>
+        <li><a style="color: black; font-size:18px; font-family:bebas" href="/kategori/product/{{ $k->parent_id='4'}}"> Pekerjaan</a>
 
         </li>
         <li><a style="color: black; font-size:18px; font-family:bebas" href="/kategori/product/{{ $k->id='7'}}"> Properti</a>
