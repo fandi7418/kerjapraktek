@@ -112,3 +112,6 @@ Route::get('/product/hapus/{id}', 'ProductController@hapus');
 Route::get('/etalase/hapus/{id}/{product}', 'EtalaseController@hapus')->name('etalase.hapus');
 Route::post('/product/update/{id}', 'ProductController@editproduct');
 Route::get('/etalase/lihat/{id}', 'EtalaseController@lihat');
+
+Route::get('product', 'ProductController@besar');
+Route::get('product=k', 'ProductController@kecil');
