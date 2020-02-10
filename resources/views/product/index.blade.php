@@ -13,19 +13,23 @@
 <div class="row">
 	<div class="col-md-8">
 		<div class="well">
-			<div class="row">
-				<div class="col-md-7">
-					{!! Form::open(['class' => 'form-inline']) !!}
-					{!! Form::label('order', 'Urutkan dari:') !!}
-					{!! Form::select('order', ['price' => 'harga', 'star' => 'rating'], 'price', ['class' => 'form-control']) !!}
-					{!! Form::select('sort', ['asc' => 'kecil-kebesar', 'desc' => 'besar- kekecil'], 'asc', ['class' => 'form-control']) !!}
-					{!! Form::submit('Filter', ['class' => 'btn btn-warning']) !!}
-					{!! Form::close() !!}
+			<div class="row " align="right" style="margin-left: 10px; margin-right:10px">
+
+				<div class="dropdown col-md-3  ">
+					<button class="btn btn-default dropdown-toggle form-control" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+						Urutkan dari
+						<span class="caret"></span>
+					</button>
+					<ul class="dropdown-menu " aria-labelledby="dropdownMenu1">
+						<li><a href="product">Harga Tinggi </a></li>
+						<li><a href="product=k">Harga Rendah </a></li>
+
+
+					</ul>
 				</div>
-				<div class="col-md-5 text-right">
-					<a style="color:rgb(240, 173, 78)" href="?view=list"><span class="fa fa-list fa-2x"></span></a>&nbsp;
-					<a style="color:rgb(240, 173, 78)" href="?view=list1"><span class="fa fa-th fa-2x"></span></a>
-				</div>
+				<a style="color:rgb(240, 173, 78)" href="?view=list"><span class="fa fa-list fa-2x"></span></a>&nbsp;
+				<a style="color:rgb(240, 173, 78)" href="?view=list1"><span class="fa fa-th fa-2x"></span></a>
+
 			</div>
 		</div>
 
@@ -33,9 +37,7 @@
 	</div>
 
 	<div class="col-md-4">
-		<div class="alert alert-warning">
-			<h3 align="center" style="color:black; font-family:bebas neue;" class="centered">Temukan Produk yang Anda Cari!</h3>
-		</div>
+
 
 		@include('product/_recommended')
 	</div>
