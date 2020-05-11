@@ -78,8 +78,14 @@ class EtalaseController extends Controller
     {
         $etalase = Etalase::with(['products'])->find($etalase->id);
         $productIds = array_pluck($etalase->products, 'id');
-        $product = Product::where('store_id', Auth::user()->store_id)
+        if (Auth::check()) {
+            $product = Product::where('store_id', Auth::user()->store_id)
             ->whereNotIn('id', $productIds)->get();
+        } else {
+            $product = Product::
+            whereNotIn('id', $productIds)->get();
+        }
+        
         //dd($etalase->toArray());
 
         return view('etalase.show', ['etalase' => $etalase, 'product' => $product,]);

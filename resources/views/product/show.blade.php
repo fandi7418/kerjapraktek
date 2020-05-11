@@ -35,7 +35,7 @@
 
 		@include('product/_seller')
 
-		@include('product/_selling')
+		<!-- @include('product/_selling') -->
 
 		@include('product/_recommended')
 

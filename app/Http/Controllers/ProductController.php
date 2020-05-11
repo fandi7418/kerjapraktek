@@ -132,7 +132,7 @@ class ProductController extends Controller
     {
         return view('product/show', [
             'product'       => $product,
-            'related'       => Product::take(16)->get(),
+            'related'       => Product::where('kategori_id', $product->kategori_id)->where('id', '!=', $product->id)->take(16)->get(),
             'menjual'       => Product::take(4)->get(),
             'recommended'   => Product::take(6)->get(),
         ]);

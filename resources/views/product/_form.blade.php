@@ -42,7 +42,7 @@
 <div class="form-group">
 	{!! Form::label('price', 'Price:', ['class' => 'col-md-2 control-label']) !!}
 	<div class="col-md-10">
-		{!! Form::text('price', $product->price, ['class' => 'form-control', 'placeholder' => 'Price']) !!}
+		{!! Form::input('number', 'price', $product->price, ['class' => 'form-control', 'placeholder' => 'Price']) !!}
 	</div>
 </div>
 
